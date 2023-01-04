@@ -22,5 +22,19 @@ namespace VegaEditor.GameProject
         {
             InitializeComponent();
         }
+
+        private void OnCreate_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = DataContext as NewProject;
+            var projectPath = vm.CreateProject(templateListBox.SelectedItem as ProjectTemplate);
+            bool dialogResult = false;
+            var window = Window.GetWindow(this);
+            if (!String.IsNullOrEmpty(projectPath))
+            {
+                dialogResult = true;
+            }
+            window.DialogResult = dialogResult;
+            window.Close();
+        }
     }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Project Property</Title>
+            <Shortcut>pprop</Shortcut>
+            <Description>Code snippet for Project Property</Description>
+			<Author>Jayden.Z</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+        </Header>
+        <Snippet>
+        	<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>name</Default>
+					<ToolTip>Name Of the Property</ToolTip>
+				</Literal>
+                <Literal>
+					<ID>type</ID>
+					<Default>string</Default>
+					<ToolTip>Type Of the Property</ToolTip>
+				</Literal>
+			</Declarations>
+            <Code Language="csharp"><![CDATA[private $type$ _$name$;
+            public $type$ $name$
+            {
+            get => _$name$;
+            set
+            {
+                if (_$name$ != value)
+                {
+                    _$name$ = value;
+                    OnPropertyChanged(nameof($name$));
+                }
+            }
+            }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
