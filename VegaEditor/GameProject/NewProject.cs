@@ -151,11 +151,11 @@ namespace VegaEditor.GameProject
                     Directory.CreateDirectory(Path.GetFullPath(Path.Combine(Path.GetDirectoryName(path), folder)));
                 }
 
-                var dirInfo = new DirectoryInfo(path + @".vegaproj\");
+                var dirInfo = new DirectoryInfo(path + @".vega\");
                 dirInfo.Attributes = FileAttributes.Hidden;
 
                 File.Copy(template.IconFilePath, Path.GetFullPath(Path.Combine(dirInfo.FullName, "Icon.png")));
-                File.Copy(template.IconFilePath, Path.GetFullPath(Path.Combine(dirInfo.FullName, "Screenshot.png")));
+                File.Copy(template.ScreenshotFilePath, Path.GetFullPath(Path.Combine(dirInfo.FullName, "Screenshot.png")));
 
                 //To Create the First Ever Project File
                 //var project = new Project(ProjectName, path);

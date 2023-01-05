@@ -22,5 +22,28 @@ namespace VegaEditor.GameProject
         {
             InitializeComponent();
         }
+
+        private void OnOpen_Button_Clicked(object sender, RoutedEventArgs e)
+        {
+            OpenSelectedProject();
+        }
+        private void OpenSelectedProject()
+        {
+            var project = OpenProject.Open(projectsListBox.SelectedItem as ProjectData);
+            bool dialogResult = false;
+            var window = Window.GetWindow(this);
+            if (project != null)
+            {
+                dialogResult = true;
+                window.DataContext = project;
+            }
+            window.DialogResult = dialogResult;
+            window.Close();
+        }
+
+        private void OnListBoxItem_Mouse_DoubleClicked(object sender, RoutedEventArgs e)
+        {
+            OpenSelectedProject();
+        }
     }
 }
