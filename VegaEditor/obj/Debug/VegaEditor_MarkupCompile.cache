@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 E:\Github\Vega\VegaEditor\App.xaml
-6-1662765198
+71873163845
 
-141474221517
+171718736659
 192-1533232326
-Editors\WorldEditor\ProjectLayoutView.xaml;Editors\WorldEditor\WorldEditorView.xaml;GameProject\NewProjectView.xaml;GameProject\OpenProjectView.xaml;GameProject\ProjectBrowserDialog.xaml;MainWindow.xaml;
+Editors\WorldEditor\ProjectLayoutView.xaml;Editors\WorldEditor\WorldEditorView.xaml;GameProject\NewProjectView.xaml;GameProject\OpenProjectView.xaml;GameProject\ProjectBrowserDialog.xaml;MainWindow.xaml;Utilities\UndoRedoView.xaml;
 
 False
 

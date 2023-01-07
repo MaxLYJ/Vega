@@ -29,3 +29,5 @@ E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\WorldEditorView.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\WorldEditorView.baml
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\ProjectLayoutView.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\ProjectLayoutView.baml
+E:\Github\Vega\VegaEditor\obj\Debug\Utilities\UndoRedoView.g.cs
+E:\Github\Vega\VegaEditor\obj\Debug\Utilities\UndoRedoView.baml

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VegaEditor.GameProject;
 
 namespace VegaEditor.Editors
 {
@@ -21,6 +23,14 @@ namespace VegaEditor.Editors
         public WorldEditorView()
         {
             InitializeComponent();
+            Loaded += OnWorldEditorViewLoaded;
+        }
+
+        private void OnWorldEditorViewLoaded(object sender, RoutedEventArgs e)
+        {
+            Loaded -= OnWorldEditorViewLoaded;
+            Focus();
+            ((INotifyCollectionChanged)Project.UndoRedo.UndoList).CollectionChanged += (s, e) => Focus();
         }
     }
 }
