@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Windows.Input;
+using VegaEditor.Components;
+using VegaEditor.Utilities;
 
 namespace VegaEditor.GameProject
 {
@@ -29,6 +33,7 @@ namespace VegaEditor.GameProject
 
 
         private bool _isActive;
+        [DataMember]
         public bool IsActive
         {
             get => _isActive;
@@ -41,11 +46,67 @@ namespace VegaEditor.GameProject
                 }
             }
         }
+
+        [DataMember(Name = nameof(GameEntities))]
+        private ObservableCollection<GameEntity> _gameEntities = new ObservableCollection<GameEntity>();
+        public ReadOnlyObservableCollection<GameEntity> GameEntities { get; private set; }
+
+        public ICommand AddGameEntityCommand { get; private set; }
+        public ICommand RemoveGameEntityCommand { get; private set; }
+
+        private void AddGameEntity(GameEntity gameEntity)
+        {
+            Debug.Assert(!_gameEntities.Contains(gameEntity));
+            _gameEntities.Add(gameEntity);
+        }
+
+        private void RemoveGameEntity(GameEntity gameEntity)
+        {
+            Debug.Assert(_gameEntities.Contains(gameEntity));
+            _gameEntities.Remove(gameEntity);
+        }
+
+        [OnDeserialized]
+        private void OnDeserialized(StreamingContext context)
+        {
+            if (_gameEntities == null) _gameEntities = new ObservableCollection<GameEntity>();
+
+            if (_gameEntities != null)
+            {
+                GameEntities = new ReadOnlyObservableCollection<GameEntity>(_gameEntities);
+                OnPropertyChanged(nameof(GameEntities));
+            }
+
+            AddGameEntityCommand = new RelayCommand<GameEntity>(x =>
+            {
+                AddGameEntity(x);
+                var entityIndex = _gameEntities.Count - 1;
+
+                Project.UndoRedo.Add(new UndoRedoAction(
+                    $"Add {x.Name} to {Name}",
+                    () => RemoveGameEntity(x),
+                    () => _gameEntities.Insert(entityIndex, x)));
+            });
+
+            RemoveGameEntityCommand = new RelayCommand<GameEntity>(x =>
+            {
+                var entityIndex = _gameEntities.IndexOf(x);
+                RemoveGameEntity(x);
+
+                Project.UndoRedo.Add(new UndoRedoAction(
+                    $"Remove {x.Name} From {Name}",
+                    () => _gameEntities.Insert(entityIndex, x),
+                    () => RemoveGameEntity(x)));
+            });
+
+        }
+
         public Scene(Project project, string name)
         {
             Debug.Assert(project != null);
             Project = project;
             Name = name;
+            OnDeserialized(new StreamingContext());
         }
     }
 }
