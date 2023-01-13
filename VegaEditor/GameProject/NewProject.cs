@@ -171,6 +171,7 @@ namespace VegaEditor.GameProject
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                Logger.Log(MessageType.Error, $@"Failed to create {template.ProjectType} at {path}");
                 return String.Empty;
             }
         }
@@ -206,7 +207,7 @@ namespace VegaEditor.GameProject
             catch(Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                //TODO: Log Error
+                Logger.Log(MessageType.Error, $@"Failed to initialize project");
             }
         }
     }

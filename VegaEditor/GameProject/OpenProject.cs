@@ -96,8 +96,8 @@ namespace VegaEditor.GameProject
             }
             catch (Exception ex)
             {
-                Debug.Write(ex.Message);
-                //TODO: log errors
+                Debug.WriteLine(ex.Message);
+                Logger.Log(MessageType.Error, $@"Failed to Open Project at {_projectDataPath}");
             }
         }
 

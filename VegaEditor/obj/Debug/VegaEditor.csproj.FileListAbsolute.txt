@@ -33,3 +33,8 @@ E:\Github\Vega\VegaEditor\obj\Debug\Utilities\UndoRedoView.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\Utilities\UndoRedoView.baml
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\GameEntityView.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\GameEntityView.baml
+E:\Github\Vega\VegaEditor\obj\Debug\Dictionaries\ControlTemplates.g.cs
+E:\Github\Vega\VegaEditor\obj\Debug\App.baml
+E:\Github\Vega\VegaEditor\obj\Debug\Dictionaries\ControlTemplates.baml
+E:\Github\Vega\VegaEditor\obj\Debug\Utilities\LoggerView.g.cs
+E:\Github\Vega\VegaEditor\obj\Debug\Utilities\LoggerView.baml
