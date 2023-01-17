@@ -1,13 +1,13 @@
 ﻿
-FE:\Github\Vega\VegaEditor\App.xaml;;
-FE:\Github\Vega\VegaEditor\Dictionaries\ControlTemplates.xaml;;
-FE:\Github\Vega\VegaEditor\Editors\WorldEditor\GameEntityView.xaml;;
-FE:\Github\Vega\VegaEditor\Editors\WorldEditor\ProjectLayoutView.xaml;;
-FE:\Github\Vega\VegaEditor\Editors\WorldEditor\WorldEditorView.xaml;;
-FE:\Github\Vega\VegaEditor\GameProject\NewProjectView.xaml;;
-FE:\Github\Vega\VegaEditor\GameProject\OpenProjectView.xaml;;
-FE:\Github\Vega\VegaEditor\GameProject\ProjectBrowserDialog.xaml;;
-FE:\Github\Vega\VegaEditor\MainWindow.xaml;;
-FE:\Github\Vega\VegaEditor\Utilities\UndoRedoView.xaml;;
-FE:\Github\Vega\VegaEditor\Utilities\LoggerView.xaml;;
+FD:\Github\Vega\VegaEditor\App.xaml;;
+FD:\Github\Vega\VegaEditor\Dictionaries\ControlTemplates.xaml;;
+FD:\Github\Vega\VegaEditor\Editors\WorldEditor\GameEntityView.xaml;;
+FD:\Github\Vega\VegaEditor\Editors\WorldEditor\ProjectLayoutView.xaml;;
+FD:\Github\Vega\VegaEditor\Editors\WorldEditor\WorldEditorView.xaml;;
+FD:\Github\Vega\VegaEditor\GameProject\NewProjectView.xaml;;
+FD:\Github\Vega\VegaEditor\GameProject\OpenProjectView.xaml;;
+FD:\Github\Vega\VegaEditor\GameProject\ProjectBrowserDialog.xaml;;
+FD:\Github\Vega\VegaEditor\MainWindow.xaml;;
+FD:\Github\Vega\VegaEditor\Utilities\LoggerView.xaml;;
+FD:\Github\Vega\VegaEditor\Utilities\UndoRedoView.xaml;;
 
