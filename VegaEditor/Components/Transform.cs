@@ -7,7 +7,7 @@ using System.Text;
 namespace VegaEditor.Components
 {
     [DataContract]
-    public class Transform : Component
+    class Transform : Component
     {
 
         private Vector3 _position;

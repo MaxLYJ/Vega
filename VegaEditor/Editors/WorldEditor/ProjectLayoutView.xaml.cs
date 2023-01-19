@@ -38,11 +38,6 @@ namespace VegaEditor.Editors
         {
             GameEntityView.Instance.DataContext = null;
             var listBox = sender as ListBox;
-            if(e.AddedItems.Count > 0)
-            {
-                GameEntityView.Instance.DataContext = (sender as ListBox).SelectedItems[0];
-            }
-
             var newSelection = listBox.SelectedItems.Cast<GameEntity>().ToList();
             var previousSelection = newSelection.Except(e.AddedItems.Cast<GameEntity>()).Concat(e.RemovedItems.Cast<GameEntity>()).ToList();
 
@@ -58,6 +53,13 @@ namespace VegaEditor.Editors
                     listBox.UnselectAll();
                     newSelection.ForEach(x => (listBox.ItemContainerGenerator.ContainerFromItem(x) as ListBoxItem).IsSelected = true);
                 }));
+
+            MSGameEntity msEntity = null;
+            if(newSelection.Any())
+            {
+                msEntity = new MSGameEntity(newSelection);
+            }
+            GameEntityView.Instance.DataContext = msEntity;
         }
     }
 }

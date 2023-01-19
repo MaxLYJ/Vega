@@ -11,7 +11,7 @@ using VegaEditor.Utilities;
 namespace VegaEditor.GameProject
 {
     [DataContract]
-    public class Scene : ViewModelBase
+    class Scene : ViewModelBase
     {
 
         private string _name;

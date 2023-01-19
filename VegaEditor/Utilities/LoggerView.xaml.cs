@@ -21,9 +21,6 @@ namespace VegaEditor.Utilities
         public LoggerView()
         {
             InitializeComponent();
-            Logger.Log(MessageType.Info, "Info");
-            Logger.Log(MessageType.Warning, "Warning");
-            Logger.Log(MessageType.Error, "Error");
         }
 
         private void OnClear_Button_Clicked(object sender, RoutedEventArgs e)
