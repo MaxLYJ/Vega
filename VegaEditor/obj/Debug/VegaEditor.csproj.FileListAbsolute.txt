@@ -17,7 +17,6 @@ E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.csproj.CoreCompileInputs.cache
 E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.dll
 E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.pdb
 E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.genruntimeconfig.cache
-E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.csproj.AssemblyReference.cache
 E:\Github\Vega\VegaEditor\obj\Debug\GameProject\ProjectBrowserDialog.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\GameProject\ProjectBrowserDialog.baml
 E:\Github\Vega\VegaEditor\obj\Debug\GameProject\NewProjectView.g.cs
