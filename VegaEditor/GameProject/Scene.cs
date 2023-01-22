@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Windows.Controls.Ribbon;
 using System.Windows.Input;
 using VegaEditor.Components;
 using VegaEditor.Utilities;
@@ -54,15 +55,24 @@ namespace VegaEditor.GameProject
         public ICommand AddGameEntityCommand { get; private set; }
         public ICommand RemoveGameEntityCommand { get; private set; }
 
-        private void AddGameEntity(GameEntity gameEntity)
+        private void AddGameEntity(GameEntity gameEntity, int index = -1)
         {
             Debug.Assert(!_gameEntities.Contains(gameEntity));
-            _gameEntities.Add(gameEntity);
+            gameEntity.IsActive = IsActive;
+            if(index == -1)
+            {
+                _gameEntities.Add(gameEntity);
+            }
+            else
+            {
+                _gameEntities.Insert(index, gameEntity);
+            }
         }
 
         private void RemoveGameEntity(GameEntity gameEntity)
         {
             Debug.Assert(_gameEntities.Contains(gameEntity));
+            gameEntity.IsActive = false;
             _gameEntities.Remove(gameEntity);
         }
 
@@ -77,6 +87,11 @@ namespace VegaEditor.GameProject
                 OnPropertyChanged(nameof(GameEntities));
             }
 
+            foreach(var entity in _gameEntities)
+            {
+                entity.IsActive = IsActive;
+            }
+
             AddGameEntityCommand = new RelayCommand<GameEntity>(x =>
             {
                 AddGameEntity(x);
@@ -85,7 +100,7 @@ namespace VegaEditor.GameProject
                 Project.UndoRedo.Add(new UndoRedoAction(
                     $"Add {x.Name} to {Name}",
                     () => RemoveGameEntity(x),
-                    () => _gameEntities.Insert(entityIndex, x)));
+                    () => AddGameEntity(x, entityIndex)));
             });
 
             RemoveGameEntityCommand = new RelayCommand<GameEntity>(x =>
@@ -95,7 +110,7 @@ namespace VegaEditor.GameProject
 
                 Project.UndoRedo.Add(new UndoRedoAction(
                     $"Remove {x.Name} From {Name}",
-                    () => _gameEntities.Insert(entityIndex, x),
+                    () => AddGameEntity(x, entityIndex),
                     () => RemoveGameEntity(x)));
             });
 

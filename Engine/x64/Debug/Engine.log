@@ -1,3 +1,6 @@
 ﻿cl : command line warning D9025: overriding '/sdl' with '/GS-'
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
+  Entity.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Transform.cpp
   Engine.vcxproj -> E:\Github\Vega\x64\Debug\Engine.lib

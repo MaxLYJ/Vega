@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VegaEditor": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
