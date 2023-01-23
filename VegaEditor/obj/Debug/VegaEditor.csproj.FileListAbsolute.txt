@@ -78,3 +78,4 @@ D:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.dll
 D:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.pdb
 D:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.genruntimeconfig.cache
 E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.csproj.AssemblyReference.cache
+E:\Github\Vega\VegaEditor\obj\Debug\Dictionaries\EditorColors.baml
