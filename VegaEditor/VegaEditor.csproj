@@ -24,7 +24,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="DllWrapper\"/>
+    <Folder Include="DllWrapper\" />
   </ItemGroup>
 
 </Project>
