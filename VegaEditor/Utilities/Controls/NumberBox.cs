@@ -93,6 +93,7 @@ namespace VegaEditor.Utilities.Controls
 
             _multiplier = 0.01;
             _mouseXStart = e.GetPosition(this).X;
+            Focus();
         }
 
         static NumberBox()
