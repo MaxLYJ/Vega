@@ -10,7 +10,7 @@ namespace vega::transform
         utl::vector<math::v3> scales;
     }
 
-    component create_transform(const init_info& info, game_entity::entity entityHandle)
+    component create (const init_info& info, game_entity::entity entityHandle)
     {
         assert(entityHandle.is_valid());
         const id::id_type entity_index{ id::index(entityHandle.get_id()) };
@@ -32,7 +32,7 @@ namespace vega::transform
         return component(transform_id{ (id::id_type)positions.size() - 1 });
     }
 
-    void remove_transform(component componentHandle)
+    void remove(component componentHandle)
     {
         assert(componentHandle.is_valid());
     }

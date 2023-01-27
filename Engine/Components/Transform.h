@@ -10,6 +10,6 @@ namespace vega::transform {
         f32 scale[3]{ 1.f, 1.f, 1.f };
     };
 
-    component create_transform(const init_info& info, game_entity::entity entityHandle);
-    void remove_transform(component componentHandle);
+    component create(const init_info& info, game_entity::entity entityHandle);
+    void remove(component componentHandle);
 }
