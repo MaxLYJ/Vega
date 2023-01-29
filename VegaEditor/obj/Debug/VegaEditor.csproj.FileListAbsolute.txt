@@ -83,3 +83,5 @@ E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\TransformView.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\ComponentView.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\ComponentView.baml
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\TransformView.baml
+E:\Github\Vega\VegaEditor\obj\Debug\EnginePathDialog.g.cs
+E:\Github\Vega\VegaEditor\obj\Debug\EnginePathDialog.baml

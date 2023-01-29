@@ -62,9 +62,9 @@ namespace vega::script
         }
 
         assert(id::is_valid(id));
+        const id::id_type index{ (id::id_type)entity_scripts.size() };
         entity_scripts.emplace_back(info.script_creator(entity));
         assert(entity_scripts.back()->get_id() == entity.get_id());
-        const id::id_type index{ (id::id_type)entity_scripts.size() };
         id_mappping[id::index(id)] = index;
         return component{ id };
     }

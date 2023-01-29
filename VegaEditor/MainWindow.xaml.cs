@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VegaEditor.GameProject;
 
 namespace VegaEditor
@@ -22,6 +22,8 @@ namespace VegaEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string VegaPath { get; private set; } = @"E:\Github\Vega";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +40,30 @@ namespace VegaEditor
         private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
         {
             Loaded -= OnMainWindowLoaded;
+            GetEnginePath();
             OpenProjectBrowserDialog();
+        }
+
+        private void GetEnginePath()
+        {
+            var vegaEnginePath = Environment.GetEnvironmentVariable("VEGA_ENGINE_PATH", EnvironmentVariableTarget.User);
+            if (vegaEnginePath == null || !Directory.Exists(Path.Combine(vegaEnginePath, @"Engine\EngineAPI")))
+            {
+                var dlg = new EnginePathDialog();
+                if(dlg.ShowDialog() == true)
+                {
+                    VegaPath = dlg.VegaPath;
+                    Environment.SetEnvironmentVariable("VEGA_ENGINE_PATH", VegaPath.ToUpper(), EnvironmentVariableTarget.User);
+                }
+                else
+                {
+                    Application.Current.Shutdown();
+                }
+            }
+            else
+            {
+                VegaPath = vegaEnginePath;
+            }
         }
 
         private void OpenProjectBrowserDialog()

@@ -2,7 +2,6 @@
 
 namespace vega_test_project
 {
-    REGISTER_SCRIPT(character_script)
 
     class character_script : public vega::script::entity_script
     {
