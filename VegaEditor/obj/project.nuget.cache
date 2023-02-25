@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "W4pNEuI3IPBfhqX1K5dmgf5AhkJ62BUZVEk1HsUCm4W8MZWCaxjiRsbNI7ydo55xxD7BEdltotMhTWIiXromJg==",
+  "dgSpecHash": "W9pEM0cXs5acaBuqJ6Hexacz95lRJZAi1NooFf9ZUewxlcmuDmuaYf21Qn31t8+QWWo711C7Mm4IWV5eAeeEWg==",
   "success": true,
-  "projectFilePath": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+  "projectFilePath": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tmzhang\\.nuget\\packages\\envdte\\17.4.33103.184\\envdte.17.4.33103.184.nupkg.sha512",
-    "C:\\Users\\tmzhang\\.nuget\\packages\\microsoft.visualstudio.interop\\17.4.33103.184\\microsoft.visualstudio.interop.17.4.33103.184.nupkg.sha512"
+    "C:\\Users\\92950\\.nuget\\packages\\envdte\\17.4.33103.184\\envdte.17.4.33103.184.nupkg.sha512",
+    "C:\\Users\\92950\\.nuget\\packages\\microsoft.visualstudio.interop\\17.4.33103.184\\microsoft.visualstudio.interop.17.4.33103.184.nupkg.sha512"
   ],
   "logs": []
 }

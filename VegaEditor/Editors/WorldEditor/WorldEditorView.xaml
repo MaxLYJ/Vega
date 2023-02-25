@@ -6,8 +6,13 @@
              xmlns:local="clr-namespace:VegaEditor.Editors"
              xmlns:utl="clr-namespace:VegaEditor.Utilities"
              xmlns:ctrl ="clr-namespace:VegaEditor.Utilities.Controls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" Focusable="True"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <sys:Boolean x:Key="True">True</sys:Boolean>
+        <sys:Boolean x:Key="False">False</sys:Boolean>
+    </UserControl.Resources>
     <UserControl.InputBindings>
         <KeyBinding Command="{Binding UndoCommand}" Key="Z" Modifiers="Ctrl"/>
         <KeyBinding Command="{Binding RedoCommand}" Key="Y" Modifiers="Ctrl"/>
@@ -19,18 +24,25 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Content="Undo" Command="{Binding UndoCommand}"/>
-            <Button Content="Redo" Command="{Binding RedoCommand}" Margin="32,0,0,0"/>
-            <Button Content="New Script" Click="OnNewScript_Button_Clicked"/>
+            <Button Content="Undo" Command="{Binding UndoCommand}" Margin="5,0"/>
+            <Button Content="Redo" Command="{Binding RedoCommand}" Margin="5,0"/>
+            <Button Content="New Script" Click="OnNewScript_Button_Clicked" Margin="5,0"/>
+            <Button x:Name="BuildButton" Content="Build" Margin="5,0"
+                    Command="{Binding BuildCommand}" CommandParameter="{StaticResource True}"/>
+            <ComboBox x:Name="runConfig" VerticalAlignment="Center"
+                      Width="72" SelectedIndex="{Binding BuildConfig}">
+                <ComboBoxItem Content="Debug"/>
+                <ComboBoxItem Content="Release"/>
+            </ComboBox>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1500"/>
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition Height="720"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Background="{StaticResource Editor.BackgroundBrush.Selected}">
@@ -49,21 +61,23 @@
                 </Border>
                 <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" 
                               VerticalAlignment="Top" Background="Transparent"/>
-                <TabControl Grid.Row="1" Background="{StaticResource Editor.Window.GrayBrush2}"
-                            Margin="0,5,0,0">
-                    <TabItem Header="History">
-                        <utl:UndoRedoView DataContext="{Binding UndoRedo}" Grid.Row="1"/>
-                    </TabItem>
-                    <TabItem Header="Logs">
-                        <utl:LoggerView/>
-                    </TabItem>
-                </TabControl>
+                <Grid Grid.Row="1" Margin="0,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <utl:UndoRedoView DataContext="{Binding UndoRedo}" Grid.Row="0"
+                                       Background="{StaticResource Editor.Window.GrayBrush2}"/>
+                    <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Left" Background="Transparent"/>
+                    <utl:LoggerView Grid.Column="1" Margin="5,0,0,0"/>
+                </Grid>
             </Grid>
             <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Left" 
                           VerticalAlignment="Stretch" Background="Transparent"/>
             <Grid Grid.Column="1" Margin="5,0,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition Height="460"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" 

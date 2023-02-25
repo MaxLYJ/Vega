@@ -1,0 +1,46 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "envdte/17.4.33103.184": {
+        "dependencies": {
+          "Microsoft.VisualStudio.Interop": "17.4.33103.184"
+        },
+        "runtime": {
+          "lib/netstandard2.0/envdte.dll": {
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.4.33103.184"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Interop/17.4.33103.184": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Interop.dll": {
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.4.33103.184"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "envdte/17.4.33103.184": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gVEPDqxn0FcvFWYzeNkcQihpydfF6G82UNuE3LDzfYg2jsBeUuKvWJqtOS643bvGBiLLEKttpGJ8R9FpCLSZ5Q==",
+      "path": "envdte/17.4.33103.184",
+      "hashPath": "envdte.17.4.33103.184.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Interop/17.4.33103.184": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RrjwcvYbAZpvHl/JhkmqMElnkLiATJ7z81yYkXeWY36J67AHq41WrF0HjCDLZyPVEpsHhkbiRYRZgd5J1HL2Ag==",
+      "path": "microsoft.visualstudio.interop/17.4.33103.184",
+      "hashPath": "microsoft.visualstudio.interop.17.4.33103.184.nupkg.sha512"
+    }
+  }
+}

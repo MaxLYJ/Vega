@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {}
+    "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {}
   },
   "projects": {
-    "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {
+    "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+        "projectUniqueName": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
         "projectName": "VegaEditor",
-        "projectPath": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
-        "packagesPath": "C:\\Users\\tmzhang\\.nuget\\packages\\",
-        "outputPath": "E:\\Github\\Vega\\VegaEditor\\obj\\",
+        "projectPath": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+        "packagesPath": "C:\\Users\\92950\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\Vega\\VegaEditor\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tmzhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\92950\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,6 +13,14 @@ using VegaEditor.Utilities;
 
 namespace VegaEditor.GameProject
 {
+    enum BuildConfiguration
+    {
+        Debug,
+        DebugEditor,
+        Release,
+        ReleaseEditor,
+    }
+
     [DataContract(Name = "Game")]
     class Project : ViewModelBase
     {
@@ -25,6 +33,26 @@ namespace VegaEditor.GameProject
 
         public string FullPath => $@"{Path}{Name}{Extention}";
         public string Solution => $@"{Path}{Name}.sln";
+
+        private static readonly string[] _buildConfigurationNames = new string[] { "Debug", "DebugEditor", "Release", "ReleaseEditor" };
+
+        private int _buildConfig;
+        [DataMember]
+        public int BuildConfig
+        {
+            get => _buildConfig;
+            set
+            {
+                if(_buildConfig != value)
+                {
+                    _buildConfig = value;
+                    OnPropertyChanged(nameof(BuildConfig));
+                }
+            }
+        }
+
+        public BuildConfiguration StandaloneBuildConfig => BuildConfig == 0 ? BuildConfiguration.Debug : BuildConfiguration.Release;
+        public BuildConfiguration DllBuildConfig => BuildConfig == 0 ? BuildConfiguration.DebugEditor : BuildConfiguration.ReleaseEditor;
 
         [DataMember(Name = "Scenes")]
         private ObservableCollection<Scene> _scenes = new ObservableCollection<Scene>();
@@ -51,8 +79,9 @@ namespace VegaEditor.GameProject
         public ICommand AddSceneCommand { get; private set; }
         public ICommand RemoveSceneCommand { get; private set; }
         public ICommand SaveCommand { get; private set; }
+        public ICommand BuildCommand { get; private set; }
 
-
+        public static string GetConfigurationName(BuildConfiguration config) => _buildConfigurationNames[(int)config];
         public static Project Current => Application.Current.MainWindow.DataContext as Project;
 
         public static UndoRedo UndoRedo { get; } = new UndoRedo();
@@ -79,6 +108,33 @@ namespace VegaEditor.GameProject
         {
             Serializer.ToFile(project, project.FullPath);
             Logger.Log(MessageType.Info, $@"Saved Project to {project.FullPath}");
+        }
+
+        private void BuildGameCodeDll(bool showWindow = true)
+        {
+            try
+            {
+                UnloadGameCodeDll();
+                VisualStudio.BuildSolution(this, GetConfigurationName(DllBuildConfig), showWindow);
+                if (VisualStudio.BuildSucceeded)
+                {
+                    LoadGameCodeDll();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
+
+        private void LoadGameCodeDll()
+        {
+        }
+
+        private void UnloadGameCodeDll()
+        {
         }
 
         public void Unload()
@@ -120,9 +176,10 @@ namespace VegaEditor.GameProject
                     () => RemoveScene(x)));
             }, x => !x.IsActive);
 
-            UndoCommand = new RelayCommand<object>(x => UndoRedo.Undo());
-            RedoCommand = new RelayCommand<object>(x => UndoRedo.Redo());
+            UndoCommand = new RelayCommand<object>(x => UndoRedo.Undo(), x => UndoRedo.UndoList.Any());
+            RedoCommand = new RelayCommand<object>(x => UndoRedo.Redo(), x => UndoRedo.RedoList.Any());
             SaveCommand = new RelayCommand<object>(x => Save(this));
+            BuildCommand = new RelayCommand<bool>(x => BuildGameCodeDll(x), x => !VisualStudio.IsDebugging() && VisualStudio.BuildDone);
         }
 
         public Project(string name, string path)
