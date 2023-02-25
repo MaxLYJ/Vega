@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using VegaEditor.GameDev;
 using VegaEditor.Utilities;
 
 namespace VegaEditor.GameProject
@@ -22,7 +23,9 @@ namespace VegaEditor.GameProject
         [DataMember]
         public string Path { get; private set; }
 
-        public string FullPath => $@"{Path}{Name}\{Name}{Extention}";
+        public string FullPath => $@"{Path}{Name}{Extention}";
+        public string Solution => $@"{Path}{Name}.sln";
+
         [DataMember(Name = "Scenes")]
         private ObservableCollection<Scene> _scenes = new ObservableCollection<Scene>();
         public ReadOnlyObservableCollection<Scene> Scenes { get; private set; }
@@ -80,6 +83,7 @@ namespace VegaEditor.GameProject
 
         public void Unload()
         {
+            VisualStudio.CloseVisualStudio();
             UndoRedo.Reset();
         }
 

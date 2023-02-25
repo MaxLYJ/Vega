@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VegaEditor.GameDev;
 using VegaEditor.GameProject;
 
 namespace VegaEditor.Editors
@@ -31,6 +32,11 @@ namespace VegaEditor.Editors
             Loaded -= OnWorldEditorViewLoaded;
             Focus();
             //((INotifyCollectionChanged)Project.UndoRedo.UndoList).CollectionChanged += (s, e) => Focus();
+        }
+
+        private void OnNewScript_Button_Clicked(object sender, RoutedEventArgs e)
+        {
+            new NewScriptDialog().ShowDialog();
         }
     }
 }

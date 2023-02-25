@@ -85,3 +85,6 @@ E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\ComponentView.baml
 E:\Github\Vega\VegaEditor\obj\Debug\Editors\WorldEditor\TransformView.baml
 E:\Github\Vega\VegaEditor\obj\Debug\EnginePathDialog.g.cs
 E:\Github\Vega\VegaEditor\obj\Debug\EnginePathDialog.baml
+E:\Github\Vega\VegaEditor\obj\Debug\VegaEditor.csproj.CopyComplete
+E:\Github\Vega\VegaEditor\obj\Debug\GameDev\NewScriptDialog.g.cs
+E:\Github\Vega\VegaEditor\obj\Debug\GameDev\NewScriptDialog.baml

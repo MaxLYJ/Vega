@@ -1,11 +1,82 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "envdte/17.4.33103.184": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Interop": "17.4.33103.184"
+        },
+        "compile": {
+          "lib/netstandard2.0/envdte.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/envdte.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Interop/17.4.33103.184": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Interop.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "envdte/17.4.33103.184": {
+      "sha512": "gVEPDqxn0FcvFWYzeNkcQihpydfF6G82UNuE3LDzfYg2jsBeUuKvWJqtOS643bvGBiLLEKttpGJ8R9FpCLSZ5Q==",
+      "type": "package",
+      "path": "envdte/17.4.33103.184",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "envdte.17.4.33103.184.nupkg.sha512",
+        "envdte.nuspec",
+        "lib/net20/envdte.dll",
+        "lib/net20/envdte.xml",
+        "lib/net45/envdte.dll",
+        "lib/net45/envdte.xml",
+        "lib/net472/envdte.dll",
+        "lib/net472/envdte.xml",
+        "lib/net6.0/envdte.dll",
+        "lib/net6.0/envdte.xml",
+        "lib/netstandard2.0/envdte.dll",
+        "lib/netstandard2.0/envdte.xml"
+      ]
+    },
+    "Microsoft.VisualStudio.Interop/17.4.33103.184": {
+      "sha512": "RrjwcvYbAZpvHl/JhkmqMElnkLiATJ7z81yYkXeWY36J67AHq41WrF0HjCDLZyPVEpsHhkbiRYRZgd5J1HL2Ag==",
+      "type": "package",
+      "path": "microsoft.visualstudio.interop/17.4.33103.184",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "lib/net20/Microsoft.VisualStudio.Interop.dll",
+        "lib/net20/Microsoft.VisualStudio.Interop.xml",
+        "lib/net45/Microsoft.VisualStudio.Interop.dll",
+        "lib/net45/Microsoft.VisualStudio.Interop.xml",
+        "lib/net472/Microsoft.VisualStudio.Interop.dll",
+        "lib/net472/Microsoft.VisualStudio.Interop.xml",
+        "lib/net6.0/Microsoft.VisualStudio.Interop.dll",
+        "lib/net6.0/Microsoft.VisualStudio.Interop.xml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Interop.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Interop.xml",
+        "microsoft.visualstudio.interop.17.4.33103.184.nupkg.sha512",
+        "microsoft.visualstudio.interop.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "EnvDTE >= 17.4.33103.184"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\tmzhang\\.nuget\\packages\\": {},
@@ -49,6 +120,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "EnvDTE": {
+            "target": "Package",
+            "version": "[17.4.33103.184, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

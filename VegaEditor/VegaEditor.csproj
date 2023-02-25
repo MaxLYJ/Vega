@@ -26,5 +26,9 @@
   <ItemGroup>
     <Folder Include="DllWrapper\" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="EnvDTE" Version="17.4.33103.184" />
+  </ItemGroup>
 
 </Project>
