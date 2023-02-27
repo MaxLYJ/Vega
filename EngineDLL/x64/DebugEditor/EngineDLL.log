@@ -1,5 +1,3 @@
-﻿  dllmain.cpp
-  EngineAPI.cpp
-  Generating Code...
-     Creating library D:\Github\Vega\x64\DebugEditor\EngineDLL.lib and object D:\Github\Vega\x64\DebugEditor\EngineDLL.exp
+﻿  EngineAPI.cpp
+D:\Github\Vega\EngineDLL\EngineAPI.cpp(26,20): warning C4101: 'error': unreferenced local variable
   EngineDLL.vcxproj -> D:\Github\Vega\x64\DebugEditor\EngineDLL.dll

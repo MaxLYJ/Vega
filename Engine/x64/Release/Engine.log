@@ -8,7 +8,7 @@ cl : command line warning D9025: overriding '/sdl' with '/GS-'
 cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Main.cpp
 D:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Entity.cpp)
-D:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Script.cpp)
 D:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Transform.cpp)
+D:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Script.cpp)
 D:\Github\Vega\Engine\Components\Transform.cpp(35,27): warning C4100: 'componentHandle': unreferenced formal parameter
   Engine.vcxproj -> D:\Github\Vega\x64\Release\Engine.lib

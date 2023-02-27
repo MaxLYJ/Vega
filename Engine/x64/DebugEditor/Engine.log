@@ -1,1 +1,10 @@
-﻿  Engine.vcxproj -> D:\Github\Vega\x64\DebugEditor\Engine.lib
+﻿cl : command line warning D9025: overriding '/sdl' with '/GS-'
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
+  Entity.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
+  Script.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
+  Transform.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
+  Main.cpp
+  Engine.vcxproj -> D:\Github\Vega\x64\DebugEditor\Engine.lib

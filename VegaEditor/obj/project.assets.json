@@ -22,6 +22,15 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Interop.dll": {}
         }
+      },
+      "EngineDLL/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/EngineDLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EngineDLL.dll": {}
+        }
       }
     }
   },
@@ -71,10 +80,16 @@
         "microsoft.visualstudio.interop.17.4.33103.184.nupkg.sha512",
         "microsoft.visualstudio.interop.nuspec"
       ]
+    },
+    "EngineDLL/1.0.0": {
+      "type": "project",
+      "path": "../EngineDLL/EngineDLL.vcxproj",
+      "msbuildProject": "../EngineDLL/EngineDLL.vcxproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "EngineDLL >= 1.0.0",
       "EnvDTE >= 17.4.33103.184"
     ]
   },
@@ -104,7 +119,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
+              "projectPath": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
+            }
+          }
         }
       },
       "warningProperties": {

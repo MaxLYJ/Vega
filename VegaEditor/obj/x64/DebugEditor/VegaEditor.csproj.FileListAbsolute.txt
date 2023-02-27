@@ -4,7 +4,6 @@ D:\Github\Vega\x64\Debug\VegaEditor.runtimeconfig.json
 D:\Github\Vega\x64\Debug\VegaEditor.runtimeconfig.dev.json
 D:\Github\Vega\x64\Debug\VegaEditor.dll
 D:\Github\Vega\x64\Debug\VegaEditor.pdb
-D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.csproj.AssemblyReference.cache
 D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Dictionaries\ControlTemplates.g.cs
 D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ComponentView.g.cs
 D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\GameEntityView.g.cs
@@ -48,3 +47,10 @@ D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.csproj.CopyComplete
 D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.dll
 D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.pdb
 D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.genruntimeconfig.cache
+D:\Github\Vega\x64\DebugEditor\VegaEditor.exe
+D:\Github\Vega\x64\DebugEditor\VegaEditor.deps.json
+D:\Github\Vega\x64\DebugEditor\VegaEditor.runtimeconfig.json
+D:\Github\Vega\x64\DebugEditor\VegaEditor.runtimeconfig.dev.json
+D:\Github\Vega\x64\DebugEditor\VegaEditor.dll
+D:\Github\Vega\x64\DebugEditor\VegaEditor.pdb
+D:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.csproj.AssemblyReference.cache

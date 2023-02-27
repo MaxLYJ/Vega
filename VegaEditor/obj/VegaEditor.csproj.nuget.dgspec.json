@@ -4,6 +4,21 @@
     "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {}
   },
   "projects": {
+    "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj",
+        "projectName": "EngineDLL",
+        "projectPath": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
     "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +42,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
+                "projectPath": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
+              }
+            }
           }
         },
         "warningProperties": {

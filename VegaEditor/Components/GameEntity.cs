@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Windows.Input;
-using VegaEditor.DllWrapper;
+using VegaEditor.DllWrappers;
 using VegaEditor.GameProject;
 using VegaEditor.Utilities;
 
@@ -43,12 +43,12 @@ namespace VegaEditor.Components
                     _isActive = value;
                     if(_isActive)
                     {
-                        EntityId = EngineAPI.CreateGameEntity(this);
+                        EntityId = EngineAPI.EntityAPI.CreateGameEntity(this);
                         Debug.Assert(ID.IsValid(_entityId));
                     }
                     else if(ID.IsValid(EntityId))
                     {
-                        EngineAPI.RemoveGameEntity(this);
+                        EngineAPI.EntityAPI.RemoveGameEntity(this);
                         EntityId = ID.INVALID_ID;
                     }
                     OnPropertyChanged(nameof(IsActive));

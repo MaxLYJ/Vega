@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using VegaEditor.DllWrappers;
 using VegaEditor.GameDev;
 using VegaEditor.Utilities;
 
@@ -131,10 +132,24 @@ namespace VegaEditor.GameProject
 
         private void LoadGameCodeDll()
         {
+            var configName = GetConfigurationName(DllBuildConfig);
+            var dll = $@"{Path}x64\{configName}\{Name}.dll";
+            if (File.Exists(dll) && EngineAPI.LoadGameCodeDll(dll) != 0)
+            {
+                Logger.Log(MessageType.Info, "Game code DLL loaded successfully");
+            }
+            else
+            {
+                Logger.Log(MessageType.Warning, "Failed to load game code DLL file, Try to build the project first.");
+            }
         }
 
         private void UnloadGameCodeDll()
         {
+            if(EngineAPI.UnloadGameCodeDll() != 0)
+            {
+                Logger.Log(MessageType.Info, "Game code DLL unloaded");
+            }
         }
 
         public void Unload()
@@ -152,6 +167,8 @@ namespace VegaEditor.GameProject
                 OnPropertyChanged(nameof(Scenes));
             }
             ActiveScene = Scenes.FirstOrDefault(x => x.IsActive);
+
+            BuildGameCodeDll(false);
 
             AddSceneCommand = new RelayCommand<object>(x =>
             {
