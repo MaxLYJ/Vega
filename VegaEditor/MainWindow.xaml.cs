@@ -22,7 +22,7 @@ namespace VegaEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static string VegaPath { get; private set; } = @"E:\Github\Vega";
+        public static string VegaPath { get; private set; }
 
         public MainWindow()
         {

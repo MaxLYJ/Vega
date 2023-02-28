@@ -34,7 +34,7 @@ namespace VegaEditor.GameProject
     {
         //TODO: get the path from the installation location
         private readonly string _templatePath = @"..\..\VegaEditor\ProjectTemplates";
-        private string _projectName = "New Project";
+        private string _projectName = "NewProject";
         public string ProjectName
         {
             get => _projectName;

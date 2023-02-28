@@ -18,18 +18,8 @@ EDITOR_INTERFACE
 u32 LoadGameCodeDll(const char* dll_path)
 {
 	if (game_code_dll) return FALSE;
-
-	try
-	{
-		game_code_dll = LoadLibraryA(dll_path);
-	}
-	catch(const char* error)
-	{
-		 std::cout << GetLastError();
-	}
-
+	game_code_dll = LoadLibraryA(dll_path);
 	assert(game_code_dll);
-
 	return game_code_dll ? TRUE : FALSE;
 }
 

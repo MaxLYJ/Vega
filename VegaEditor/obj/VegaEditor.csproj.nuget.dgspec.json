@@ -1,35 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {}
+    "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {}
   },
   "projects": {
-    "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
+    "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
       "restore": {
-        "projectUniqueName": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj",
+        "projectUniqueName": "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj",
         "projectName": "EngineDLL",
-        "projectPath": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj",
-        "frameworks": {
-          "native": {
-            "projectReferences": {}
-          }
-        }
+        "projectPath": "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
       },
       "frameworks": {
         "native": {}
       }
     },
-    "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {
+    "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+        "projectUniqueName": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
         "projectName": "VegaEditor",
-        "projectPath": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
-        "packagesPath": "C:\\Users\\92950\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\Vega\\VegaEditor\\obj\\",
+        "projectPath": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+        "packagesPath": "C:\\Users\\tmzhang\\.nuget\\packages\\",
+        "outputPath": "E:\\Github\\Vega\\VegaEditor\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\92950\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tmzhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,8 +41,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
-                "projectPath": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
+              "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
+                "projectPath": "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
               }
             }
           }
@@ -82,7 +80,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -94,19 +94,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\92950\\.nuget\\packages\\": {}
+    "C:\\Users\\tmzhang\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+      "projectUniqueName": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
       "projectName": "VegaEditor",
-      "projectPath": "D:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
-      "packagesPath": "C:\\Users\\92950\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\Vega\\VegaEditor\\obj\\",
+      "projectPath": "E:\\Github\\Vega\\VegaEditor\\VegaEditor.csproj",
+      "packagesPath": "C:\\Users\\tmzhang\\.nuget\\packages\\",
+      "outputPath": "E:\\Github\\Vega\\VegaEditor\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\92950\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tmzhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -120,8 +124,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
-              "projectPath": "D:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
+            "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj": {
+              "projectPath": "E:\\Github\\Vega\\EngineDLL\\EngineDLL.vcxproj"
             }
           }
         }
@@ -159,7 +163,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

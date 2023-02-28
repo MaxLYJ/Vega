@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using VegaEditor.DllWrappers;
@@ -28,7 +29,7 @@ namespace VegaEditor.GameProject
 
         public static string Extention = ".vegaproj";
         [DataMember]
-        public string Name { get; private set; } = "New Project";
+        public string Name { get; private set; } = "NewProject";
         [DataMember]
         public string Path { get; private set; }
 
@@ -82,6 +83,44 @@ namespace VegaEditor.GameProject
         public ICommand SaveCommand { get; private set; }
         public ICommand BuildCommand { get; private set; }
 
+        private void SetCommands()
+        {
+            AddSceneCommand = new RelayCommand<object>(x =>
+            {
+                AddScene($"New Scene {_scenes.Count}");
+                var newScene = _scenes.Last();
+                var sceneIndex = _scenes.Count - 1;
+
+                UndoRedo.Add(new UndoRedoAction(
+                    $"Add {newScene.Name}",
+                    () => RemoveScene(newScene),
+                    () => _scenes.Insert(sceneIndex, newScene)));
+            });
+
+            RemoveSceneCommand = new RelayCommand<Scene>(x =>
+            {
+                var sceneIndex = _scenes.IndexOf(x);
+                RemoveScene(x);
+
+                UndoRedo.Add(new UndoRedoAction(
+                    $"Remove {x.Name}",
+                    () => _scenes.Insert(sceneIndex, x),
+                    () => RemoveScene(x)));
+            }, x => !x.IsActive);
+
+            UndoCommand = new RelayCommand<object>(x => UndoRedo.Undo(), x => UndoRedo.UndoList.Any());
+            RedoCommand = new RelayCommand<object>(x => UndoRedo.Redo(), x => UndoRedo.RedoList.Any());
+            SaveCommand = new RelayCommand<object>(x => Save(this));
+            BuildCommand = new RelayCommand<bool>(async x => await BuildGameCodeDll(x), x => !VisualStudio.IsDebugging() && VisualStudio.BuildDone);
+
+            OnPropertyChanged(nameof(AddSceneCommand));
+            OnPropertyChanged(nameof(RemoveSceneCommand));
+            OnPropertyChanged(nameof(UndoCommand));
+            OnPropertyChanged(nameof(RedoCommand));
+            OnPropertyChanged(nameof(SaveCommand));
+            OnPropertyChanged(nameof(BuildCommand));
+        }
+
         public static string GetConfigurationName(BuildConfiguration config) => _buildConfigurationNames[(int)config];
         public static Project Current => Application.Current.MainWindow.DataContext as Project;
 
@@ -111,12 +150,12 @@ namespace VegaEditor.GameProject
             Logger.Log(MessageType.Info, $@"Saved Project to {project.FullPath}");
         }
 
-        private void BuildGameCodeDll(bool showWindow = true)
+        private async Task BuildGameCodeDll(bool showWindow = true)
         {
             try
             {
                 UnloadGameCodeDll();
-                VisualStudio.BuildSolution(this, GetConfigurationName(DllBuildConfig), showWindow);
+                await Task.Run(() => VisualStudio.BuildSolution(this, GetConfigurationName(DllBuildConfig), showWindow));
                 if (VisualStudio.BuildSucceeded)
                 {
                     LoadGameCodeDll();
@@ -159,7 +198,7 @@ namespace VegaEditor.GameProject
         }
 
         [OnDeserialized]
-        private void OnDeserialized(StreamingContext context)
+        private async void OnDeserialized(StreamingContext context)
         {
             if(_scenes != null)
             {
@@ -168,35 +207,9 @@ namespace VegaEditor.GameProject
             }
             ActiveScene = Scenes.FirstOrDefault(x => x.IsActive);
 
-            BuildGameCodeDll(false);
+            await BuildGameCodeDll(false);
 
-            AddSceneCommand = new RelayCommand<object>(x =>
-            {
-                AddScene($"New Scene {_scenes.Count}");
-                var newScene = _scenes.Last();
-                var sceneIndex = _scenes.Count - 1;
-
-                UndoRedo.Add(new UndoRedoAction(
-                    $"Add {newScene.Name}",
-                    () => RemoveScene(newScene),
-                    () => _scenes.Insert(sceneIndex, newScene)));
-            });
-
-            RemoveSceneCommand = new RelayCommand<Scene>(x =>
-            {
-                var sceneIndex = _scenes.IndexOf(x);
-                RemoveScene(x);
-
-                UndoRedo.Add(new UndoRedoAction(
-                    $"Remove {x.Name}",
-                    () => _scenes.Insert(sceneIndex, x),
-                    () => RemoveScene(x)));
-            }, x => !x.IsActive);
-
-            UndoCommand = new RelayCommand<object>(x => UndoRedo.Undo(), x => UndoRedo.UndoList.Any());
-            RedoCommand = new RelayCommand<object>(x => UndoRedo.Redo(), x => UndoRedo.RedoList.Any());
-            SaveCommand = new RelayCommand<object>(x => Save(this));
-            BuildCommand = new RelayCommand<bool>(x => BuildGameCodeDll(x), x => !VisualStudio.IsDebugging() && VisualStudio.BuildDone);
+            SetCommands();
         }
 
         public Project(string name, string path)
