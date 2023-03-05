@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,6 +15,7 @@ namespace VegaEditor.Components
 {
     [DataContract]
     [KnownType(typeof(Transform))]
+    [KnownType(typeof(Script))]
     class GameEntity : ViewModelBase
     {
 
@@ -93,6 +95,33 @@ namespace VegaEditor.Components
 
         public Component GetComponent(Type type) => Components.FirstOrDefault(c => c.GetType() == type);
         public T GetComponent<T>() where T : Component => GetComponent(typeof(T)) as T;
+
+        public bool AddComponent(Component component)
+        {
+            Debug.Assert(component != null);
+            if (!Components.Any(x => x.GetType() == component.GetType()))
+            {
+                IsActive = false;
+                _components.Add(component);
+                IsActive = true;
+                return true;
+            }
+            Logger.Log(MessageType.Warning, $"Entity {Name} already has a type of {component.GetType().Name} Component");
+            return false;
+        }
+
+        public void RemoveComponent(Component component)
+        {
+            Debug.Assert(component != null);
+            if (component is Transform) return; // We can't remove a Transform component
+
+            if(Components.Contains(component))
+            {
+                IsActive = false;
+                _components.Remove(component);
+                IsActive = true;
+            }
+        }
 
         [OnDeserialized]
         void OnDeserialized(StreamingContext context)
