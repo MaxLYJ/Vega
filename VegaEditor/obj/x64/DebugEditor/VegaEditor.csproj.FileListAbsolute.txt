@@ -104,3 +104,5 @@ E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.csproj.CopyComplete
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.dll
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.pdb
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.genruntimeconfig.cache
+E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ScriptView.g.cs
+E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ScriptView.baml

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using VegaEditor.Components;
 using VegaEditor.EngineAPIStructs;
+using VegaEditor.GameProject;
+using VegaEditor.Utilities;
 
 namespace VegaEditor.EngineAPIStructs
 {
@@ -26,6 +29,7 @@ namespace VegaEditor.EngineAPIStructs
     class GameEntityDescriptor
     {
         public TransformComponent Transform = new TransformComponent();
+        public ScriptComponent Script = new ScriptComponent();
     }
 }
 
@@ -62,7 +66,21 @@ namespace VegaEditor.DllWrappers
                 }
                 // script
                 {
-                    // var c = entity.GetComponent<Script>();
+                    var c = entity.GetComponent<Script>();
+                    // Note here we also need to check if the current project is not null.
+                    // In this case, that means the game code dll has not been loaded yet
+                    // And then we deffer the creation of script entity, until the DLL is properly loaded
+                    if(c != null && Project.Current != null)
+                    {
+                        if(Project.Current.AvailableScripts.Contains(c.Name))
+                        {
+                            desc.Script.ScriptCreator = GetScriptCreator(c.Name);
+                        }
+                        else
+                        {
+                            Logger.Log(MessageType.Error, $"Unable to find script with name {c.Name}. Game entity will be created without script component!");
+                        }
+                    }
                 }
                 return CreateGameEntity(desc);
             }

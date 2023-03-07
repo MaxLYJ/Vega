@@ -50,24 +50,22 @@ namespace vega::script
             assert(result);
             return result;
         }
-    }
 
 #ifdef USE_WITH_EDITOR
-    u8 add_script_name(const char* name)
-    {
-        script_names().emplace_back(name);
-        return true;
-    }
+        u8 add_script_name(const char* name)
+        {
+            script_names().emplace_back(name);
+            return true;
+        }
 
-    script_creator get_script_creator(size_t tag)
-    {
-        auto script = vega::script::registry().find(tag);
-        assert(script != vega::script::registry().end() && script->first == tag);
-        return script->second;
-    }
+        script_creator get_script_creator(size_t tag)
+        {
+            auto script = vega::script::registry().find(tag);
+            assert(script != vega::script::registry().end() && script->first == tag);
+            return script->second;
+        }
 #endif // USE_WITH_EDITOR
-
-
+    }
 
     component create(init_info info, game_entity::entity entity)
     {
