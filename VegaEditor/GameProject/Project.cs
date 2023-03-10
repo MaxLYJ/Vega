@@ -227,7 +227,6 @@ namespace VegaEditor.GameProject
                 Debug.WriteLine(ex.Message);
                 throw;
             }
-
         }
 
         private void LoadGameCodeDll()
