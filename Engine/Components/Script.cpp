@@ -105,6 +105,14 @@ namespace vega::script
         utl::erase_unordered(entity_scripts, index);
         id_mappping[id::index(id)] = id::invalid_id;
     }
+
+    void update(float dt)
+    {
+        for (auto& ptr : entity_scripts)
+        {
+            ptr->update(dt);
+        }
+    }
 }
 
 #ifdef USE_WITH_EDITOR

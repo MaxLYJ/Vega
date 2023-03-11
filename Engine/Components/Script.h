@@ -10,4 +10,5 @@ namespace vega::script {
 
     component create(init_info info, game_entity::entity entityHandle);
     void remove(component componentHandle);
+    void update(float dt);
 }
