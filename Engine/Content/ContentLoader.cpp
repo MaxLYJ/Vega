@@ -73,7 +73,7 @@ namespace vega::content {
 
     bool load_game()
     {
-        // Set the working dire to the exe path
+        // Set the working dir to the exe path
         wchar_t path[MAX_PATH];
         const u32 length{ GetModuleFileName(0, &path[0], MAX_PATH) };
         if (!length || GetLastError() == ERROR_INSUFFICIENT_BUFFER) return false;

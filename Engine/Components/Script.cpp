@@ -51,18 +51,18 @@ namespace vega::script
             return result;
         }
 
-#ifdef USE_WITH_EDITOR
-        u8 add_script_name(const char* name)
-        {
-            script_names().emplace_back(name);
-            return true;
-        }
-
         script_creator get_script_creator(size_t tag)
         {
             auto script = vega::script::registry().find(tag);
             assert(script != vega::script::registry().end() && script->first == tag);
             return script->second;
+        }
+
+#ifdef USE_WITH_EDITOR
+        u8 add_script_name(const char* name)
+        {
+            script_names().emplace_back(name);
+            return true;
         }
 #endif // USE_WITH_EDITOR
     }

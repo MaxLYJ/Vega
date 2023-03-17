@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "VegaEditor/1.0.0": {
         "dependencies": {
+          "EngineDLL": "1.0.0",
           "envdte": "17.4.33103.184"
         },
         "runtime": {

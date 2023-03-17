@@ -8,7 +8,7 @@ namespace VegaEditor.Components
     enum ComponentType
     {
         Transform,
-        Script
+        Script,
     }
 
     static class ComponentFactory

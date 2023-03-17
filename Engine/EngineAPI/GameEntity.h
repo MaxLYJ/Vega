@@ -45,11 +45,10 @@ namespace vega
             using string_hash = std::hash<std::string>;
 
             u8 register_script(size_t, script_creator);
-
 #ifdef USE_WITH_EDITOR
             extern "C" __declspec(dllexport)
 #endif // USE_WITH_EDITOR
-                script_creator get_script_creator(size_t tag);
+            script_creator get_script_creator(size_t tag);
 
             template<class script_class>
             script_ptr create_script(game_entity::entity entity)

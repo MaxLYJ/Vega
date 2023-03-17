@@ -1,2 +1,5 @@
 ﻿  EngineAPI.cpp
+  EntityAPI.cpp
+  Generating Code...
+     Creating library E:\Github\Vega\x64\Debug\EngineDLL.lib and object E:\Github\Vega\x64\Debug\EngineDLL.exp
   EngineDLL.vcxproj -> E:\Github\Vega\x64\Debug\EngineDLL.dll

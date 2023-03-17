@@ -26,7 +26,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
     if (engine_initialize())
     {
         MSG msg{};
-        bool _is_running{ true };
+        bool is_running{ true };
         while (is_running)
         {
             while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
