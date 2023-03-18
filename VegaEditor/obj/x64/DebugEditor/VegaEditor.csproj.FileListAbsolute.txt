@@ -106,3 +106,5 @@ E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.pdb
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\VegaEditor.genruntimeconfig.cache
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ScriptView.g.cs
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ScriptView.baml
+E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Utilities\RenderSurface\RenderSurfaceView.g.cs
+E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Utilities\RenderSurface\RenderSurfaceView.baml

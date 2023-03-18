@@ -140,13 +140,11 @@ namespace vega::platform
                     GetWindowRect(info.hwnd, &rect);
                     info.top_left.x = rect.left;
                     info.top_left.y = rect.top;
-                    info.style = 0;
-                    SetWindowLongPtr(info.hwnd, GWL_STYLE, info.style);
+                    SetWindowLongPtr(info.hwnd, GWL_STYLE, 0);
                     ShowWindow(info.hwnd, SW_MAXIMIZE);
                 }
                 else
                 {
-                    info.style = WS_VISIBLE | WS_OVERLAPPEDWINDOW;
                     SetWindowLongPtr(info.hwnd, GWL_STYLE, info.style);
                     resize_window(info, info.client_area);
                     ShowWindow(info.hwnd, SW_SHOWNORMAL);
@@ -175,7 +173,7 @@ namespace vega::platform
     math::u32v4 get_window_size(window_id id)
     {
         window_info& info{ get_from_id(id) };
-        RECT area{ info.is_fullscreen ? info.fullscreen_area : info.client_area };
+        RECT& area{ info.is_fullscreen ? info.fullscreen_area : info.client_area };
         return { (u32)area.left, (u32)area.top, (u32)area.right, (u32)area.bottom };
     }
 
@@ -203,7 +201,7 @@ namespace vega::platform
         wc.hCursor = LoadCursor(NULL, IDC_ARROW);
         wc.hbrBackground = CreateSolidBrush((RGB(26, 48, 76)));
         wc.lpszMenuName = NULL;
-        wc.lpszClassName = L"PrimalWindow";
+        wc.lpszClassName = L"Vega Window";
         wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
         // Register the window class
@@ -212,18 +210,18 @@ namespace vega::platform
         window_info info{};
         info.client_area.right = (init_info && init_info->width) ? info.client_area.left + init_info->width : info.client_area.right;
         info.client_area.bottom = (init_info && init_info->height) ? info.client_area.top + init_info->height : info.client_area.bottom;
-        
+        info.style |= parent ? WS_CHILD : WS_OVERLAPPEDWINDOW;
+
         RECT rect{ info.client_area };
 
         AdjustWindowRect(&rect, info.style, FALSE);
 
-        const wchar_t* caption{ (init_info && init_info->caption) ? init_info->caption : L"Primal Game" };
+        const wchar_t* caption{ (init_info && init_info->caption) ? init_info->caption : L"Vega Game" };
         const s32 left{ (init_info) ? init_info->left : info.top_left.x };
         const s32 top{ (init_info) ? init_info->top : info.top_left.y };
         const s32 width{ rect.right - rect.left };
         const s32 height{ rect.bottom - rect.top };
 
-        info.style |= parent ? WS_CHILD : WS_OVERLAPPEDWINDOW;
 
         // Create an instance of the window class
         info.hwnd = CreateWindowEx(
@@ -246,7 +244,6 @@ namespace vega::platform
             DEBUG_OP(SetLastError(0));
             const window_id id{ add_to_windows(info) };
             SetWindowLongPtr(info.hwnd, GWLP_USERDATA, (LONG_PTR)id);
-
             // Set in the "extra" bytes the pointer to the window callback
             // with handles messages for the windows
             if (callback) SetWindowLongPtr(info.hwnd, 0, (LONG_PTR)callback);
