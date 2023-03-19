@@ -1,6 +1,6 @@
 ﻿  Generating code
-  3 of 188 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
+  1 of 188 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   UnitTest.vcxproj -> E:\Github\Vega\x64\Release\UnitTest.exe
