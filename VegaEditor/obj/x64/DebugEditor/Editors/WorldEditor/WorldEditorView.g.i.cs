@@ -71,7 +71,7 @@ namespace VegaEditor.Editors {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VegaEditor;component/editors/worldeditor/worldeditorview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VegaEditor;V1.0.0.0;component/editors/worldeditor/worldeditorview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Editors\WorldEditor\WorldEditorView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

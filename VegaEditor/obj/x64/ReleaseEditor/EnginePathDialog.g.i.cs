@@ -69,7 +69,7 @@ namespace VegaEditor {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VegaEditor;component/enginepathdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VegaEditor;V1.0.0.0;component/enginepathdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\EnginePathDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
