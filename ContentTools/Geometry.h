@@ -3,6 +3,14 @@
 
 namespace vega::tools {
     
+    struct vertex
+    {
+        math::v4 tangent{};
+        math::v3 position{};
+        math::v3 normal{};
+        math::v2 uv{};
+    };
+
     struct mesh
     {
         // initial data
@@ -14,6 +22,8 @@ namespace vega::tools {
         utl::vector<u32>                    raw_indices;
 
         // intermediate data
+        utl::vector<vertex>                 vertices;
+        utl::vector<u32>                    indices;
 
         // output data
     };
@@ -46,4 +56,7 @@ namespace vega::tools {
         u32                                 buffer_size;
         geometry_import_settings            settings;
     };
+
+    void process_scene(scene& scene, const geometry_import_settings& settings);
+    void pack_data(const scene& scene, scene_data& data);
 }
