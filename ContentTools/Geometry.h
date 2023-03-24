@@ -3,12 +3,24 @@
 
 namespace vega::tools {
     
+    namespace packed_vertex {
+        struct vertex_static
+        {
+            math::v3                        positions;
+            u8                              reserved[3];
+            u8                              t_sign; // bit 0; tangent handedness * (tangent.z sign), bit 1: normal.z sign (0 means -1, 1 means +1)
+            u16                             normal[2];
+            u16                             tangent[2];
+            math::v2                        uv;
+        };
+    }
+
     struct vertex
     {
-        math::v4 tangent{};
-        math::v3 position{};
-        math::v3 normal{};
-        math::v2 uv{};
+        math::v4                            tangent{};
+        math::v3                            position{};
+        math::v3                            normal{};
+        math::v2                            uv{};
     };
 
     struct mesh
@@ -26,6 +38,10 @@ namespace vega::tools {
         utl::vector<u32>                    indices;
 
         // output data
+        std::string                         name;
+        utl::vector<packed_vertex::vertex_static> packed_vertices_static;
+        f32                                 lod_threshold{ -1.f };
+        u32                                 lod_id{ u32_invalid_id };
     };
 
     struct lod_group
