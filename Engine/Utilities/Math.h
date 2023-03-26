@@ -33,7 +33,7 @@ namespace vega::math {
         assert(min < max);
         assert(f <= max && f >= min);
         const f32 distance{ (f - min) / (max - min) };
-        return pack_unit_float(bits)(distance);
+        return pack_unit_float<bits>(distance);
     }
 
     template<u32 bits>

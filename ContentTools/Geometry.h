@@ -53,7 +53,7 @@ namespace vega::tools {
     struct scene
     {
         std::string                         name;
-        utl::vector<lod_group>              meshes;
+        utl::vector<lod_group>              lod_groups;
     };
 
     struct geometry_import_settings
