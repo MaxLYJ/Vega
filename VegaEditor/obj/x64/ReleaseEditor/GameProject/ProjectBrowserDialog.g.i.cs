@@ -109,7 +109,7 @@ namespace VegaEditor.GameProject {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VegaEditor;V1.0.0.0;component/gameproject/projectbrowserdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VegaEditor;component/gameproject/projectbrowserdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\GameProject\ProjectBrowserDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
