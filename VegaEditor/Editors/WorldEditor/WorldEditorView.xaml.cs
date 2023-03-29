@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VegaEditor.Content;
 using VegaEditor.GameDev;
 using VegaEditor.GameProject;
 
@@ -37,6 +38,12 @@ namespace VegaEditor.Editors
         private void OnNewScript_Button_Clicked(object sender, RoutedEventArgs e)
         {
             new NewScriptDialog().ShowDialog();
+        }
+
+        private void OnCreatePrimitiveMesh_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new PrimitiveMeshDialog();
+            dlg.ShowDialog();
         }
     }
 }

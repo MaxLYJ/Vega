@@ -17,6 +17,16 @@ namespace VegaEditor.Utilities.Controls
         private bool _captured = false;
         private bool _valueChanged = false;
 
+        public event RoutedEventHandler ValueChanged
+        {
+            add => AddHandler(ValueCHangedEvent, value);
+            remove => RemoveHandler(ValueCHangedEvent, value);
+        }
+
+        public static readonly RoutedEvent ValueCHangedEvent =
+            EventManager.RegisterRoutedEvent(nameof(ValueChanged), RoutingStrategy.Bubble,
+                typeof(RoutedEventHandler), typeof(NumberBox));
+
         public double Multiplier
         {
             get => (double)GetValue(MultiplierProperty);
@@ -33,7 +43,13 @@ namespace VegaEditor.Utilities.Controls
         }
         public static readonly DependencyProperty ValueProperty =
             DependencyProperty.Register(nameof(Value), typeof(string), typeof(NumberBox),
-                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                    new PropertyChangedCallback(OnValueChanged)));
+
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            (d as NumberBox).RaiseEvent(new RoutedEventArgs(ValueCHangedEvent));
+        }
 
         public override void OnApplyTemplate()
         {

@@ -10,6 +10,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{C41279F8-7F32-4262-97B6-8C4DC11CF8D1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineDLL", "EngineDLL\EngineDLL.vcxproj", "{6AAE90BD-A89F-4EF2-BDEF-BA9EA7381D9F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D77F6208-FAA2-4ADC-9BB8-DF6A9A800561} = {D77F6208-FAA2-4ADC-9BB8-DF6A9A800561}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContentTools", "ContentTools\ContentTools.vcxproj", "{53BDE673-E9DC-48E2-B1FB-29D1F80E35B1}"
 EndProject

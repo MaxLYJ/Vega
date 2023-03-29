@@ -108,3 +108,5 @@ E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ScriptView.g.c
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Editors\WorldEditor\ScriptView.baml
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Utilities\RenderSurface\RenderSurfaceView.g.cs
 E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Utilities\RenderSurface\RenderSurfaceView.baml
+E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Content\PrimitiveMeshDialog.g.cs
+E:\Github\Vega\VegaEditor\obj\x64\DebugEditor\Content\PrimitiveMeshDialog.baml

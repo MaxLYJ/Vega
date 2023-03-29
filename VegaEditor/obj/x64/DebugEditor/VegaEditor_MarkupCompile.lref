@@ -1,5 +1,6 @@
 ﻿
 FE:\Github\Vega\VegaEditor\App.xaml;;
+FE:\Github\Vega\VegaEditor\Content\PrimitiveMeshDialog.xaml;;
 FE:\Github\Vega\VegaEditor\Dictionaries\ControlTemplates.xaml;;
 FE:\Github\Vega\VegaEditor\Dictionaries\EditorColors.xaml;;
 FE:\Github\Vega\VegaEditor\Editors\WorldEditor\ComponentView.xaml;;
@@ -15,6 +16,6 @@ FE:\Github\Vega\VegaEditor\GameProject\OpenProjectView.xaml;;
 FE:\Github\Vega\VegaEditor\GameProject\ProjectBrowserDialog.xaml;;
 FE:\Github\Vega\VegaEditor\MainWindow.xaml;;
 FE:\Github\Vega\VegaEditor\Utilities\LoggerView.xaml;;
-FE:\Github\Vega\VegaEditor\Utilities\UndoRedoView.xaml;;
 FE:\Github\Vega\VegaEditor\Utilities\RenderSurface\RenderSurfaceView.xaml;;
+FE:\Github\Vega\VegaEditor\Utilities\UndoRedoView.xaml;;
 

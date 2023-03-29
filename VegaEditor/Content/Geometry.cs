@@ -238,7 +238,7 @@ namespace VegaEditor.Content
             lod.Meshes.Add(mesh);
         }
 
-        public Geometry(AssetType type) : base(type)
+        public Geometry() : base(AssetType.Mesh)
         {
         }
     }
