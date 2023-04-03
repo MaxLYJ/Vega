@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using VegaEditor.ContentToolsAPIStructs;
 using VegaEditor.DllWrappers;
+using VegaEditor.Editors;
 using VegaEditor.Utilities.Controls;
 
 namespace VegaEditor.Content
@@ -63,6 +64,7 @@ namespace VegaEditor.Content
 
             var geometry = new Geometry();
             ContentToolsAPI.CreatePrimitiveMesh(geometry, info);
+            (DataContext as GeometryEditor).SetAsset(geometry);
         }
         public PrimitiveMeshDialog()
         {
