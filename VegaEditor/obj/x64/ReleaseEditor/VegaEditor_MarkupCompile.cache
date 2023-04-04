@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASEEDITOR;NETCOREAPP;NETCOREAPP3_1;
 E:\Github\Vega\VegaEditor\App.xaml
-181715690442
+191763547412
 
-46-506488177
+47530507467
 1941821569968
-Content\PrimitiveMeshDialog.xaml;Dictionaries\ControlTemplates.xaml;Dictionaries\EditorColors.xaml;Editors\WorldEditor\ComponentView.xaml;Editors\WorldEditor\GameEntityView.xaml;Editors\WorldEditor\ProjectLayoutView.xaml;Editors\WorldEditor\ScriptView.xaml;Editors\WorldEditor\TransformView.xaml;Editors\WorldEditor\WorldEditorView.xaml;EnginePathDialog.xaml;GameDev\NewScriptDialog.xaml;GameProject\NewProjectView.xaml;GameProject\OpenProjectView.xaml;GameProject\ProjectBrowserDialog.xaml;MainWindow.xaml;Utilities\LoggerView.xaml;Utilities\RenderSurface\RenderSurfaceView.xaml;Utilities\UndoRedoView.xaml;
+Content\PrimitiveMeshDialog.xaml;Dictionaries\ControlTemplates.xaml;Dictionaries\EditorColors.xaml;Editors\GeometryEditor\GeometryView.xaml;Editors\WorldEditor\ComponentView.xaml;Editors\WorldEditor\GameEntityView.xaml;Editors\WorldEditor\ProjectLayoutView.xaml;Editors\WorldEditor\ScriptView.xaml;Editors\WorldEditor\TransformView.xaml;Editors\WorldEditor\WorldEditorView.xaml;EnginePathDialog.xaml;GameDev\NewScriptDialog.xaml;GameProject\NewProjectView.xaml;GameProject\OpenProjectView.xaml;GameProject\ProjectBrowserDialog.xaml;MainWindow.xaml;Utilities\LoggerView.xaml;Utilities\RenderSurface\RenderSurfaceView.xaml;Utilities\UndoRedoView.xaml;
 
 False
 

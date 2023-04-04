@@ -3,6 +3,7 @@ FE:\Github\Vega\VegaEditor\App.xaml;;
 FE:\Github\Vega\VegaEditor\Content\PrimitiveMeshDialog.xaml;;
 FE:\Github\Vega\VegaEditor\Dictionaries\ControlTemplates.xaml;;
 FE:\Github\Vega\VegaEditor\Dictionaries\EditorColors.xaml;;
+FE:\Github\Vega\VegaEditor\Editors\GeometryEditor\GeometryView.xaml;;
 FE:\Github\Vega\VegaEditor\Editors\WorldEditor\ComponentView.xaml;;
 FE:\Github\Vega\VegaEditor\Editors\WorldEditor\GameEntityView.xaml;;
 FE:\Github\Vega\VegaEditor\Editors\WorldEditor\ProjectLayoutView.xaml;;

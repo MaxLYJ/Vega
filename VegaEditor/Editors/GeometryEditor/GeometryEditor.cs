@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
@@ -56,7 +54,7 @@ namespace VegaEditor.Editors
     //       renderer, this class and the WPF viewer will become obsolete
     class MeshRenderer : ViewModelBase
     {
-        public ObservableCollection<MeshRendererVertexData> meshes { get; } = new ObservableCollection<MeshRendererVertexData>();
+        public ObservableCollection<MeshRendererVertexData> Meshes { get; } = new ObservableCollection<MeshRendererVertexData>();
 
 
         private Vector3D _cameraDirection = new Vector3D(0, 0, -10);
@@ -83,6 +81,7 @@ namespace VegaEditor.Editors
                 if (_cameraPosition != value)
                 {
                     _cameraPosition = value;
+                    CameraDirection = new Vector3D(-value.X, -value.Y, -value.Z);
                     OnPropertyChanged(nameof(OffsetCameraPosition));
                     OnPropertyChanged(nameof(CameraPosition));
                 }
@@ -223,7 +222,8 @@ namespace VegaEditor.Editors
                 vertexData.Positions.Freeze();
                 vertexData.Normals.Freeze();
                 vertexData.UVs.Freeze();
-                meshes.Add(vertexData);
+                vertexData.Indices.Freeze();
+                Meshes.Add(vertexData);
             }
 
             // set camera target and position
@@ -257,8 +257,7 @@ namespace VegaEditor.Editors
 
     class GeometryEditor : ViewModelBase, IAssetEditor
     {
-        public Content.Asset Asset => throw new NotImplementedException();
-
+        public Content.Asset Asset => Geometry;
 
         private Content.Geometry _geometry;
         public Content.Geometry Geometry
@@ -273,7 +272,6 @@ namespace VegaEditor.Editors
                 }
             }
         }
-
 
         private MeshRenderer _meshRenderer;
         public MeshRenderer MeshRenderer

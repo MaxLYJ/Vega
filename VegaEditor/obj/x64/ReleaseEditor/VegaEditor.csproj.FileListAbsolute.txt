@@ -109,3 +109,5 @@ E:\Github\Vega\VegaEditor\obj\x64\ReleaseEditor\Utilities\RenderSurface\RenderSu
 E:\Github\Vega\VegaEditor\obj\x64\ReleaseEditor\Utilities\RenderSurface\RenderSurfaceView.baml
 E:\Github\Vega\VegaEditor\obj\x64\ReleaseEditor\Content\PrimitiveMeshDialog.g.cs
 E:\Github\Vega\VegaEditor\obj\x64\ReleaseEditor\Content\PrimitiveMeshDialog.baml
+E:\Github\Vega\VegaEditor\obj\x64\ReleaseEditor\Editors\GeometryEditor\GeometryView.g.cs
+E:\Github\Vega\VegaEditor\obj\x64\ReleaseEditor\Editors\GeometryEditor\GeometryView.baml

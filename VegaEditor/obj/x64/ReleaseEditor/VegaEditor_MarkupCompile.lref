@@ -18,4 +18,5 @@ FE:\Github\Vega\VegaEditor\Utilities\LoggerView.xaml;;
 FE:\Github\Vega\VegaEditor\Utilities\UndoRedoView.xaml;;
 FE:\Github\Vega\VegaEditor\Utilities\RenderSurface\RenderSurfaceView.xaml;;
 FE:\Github\Vega\VegaEditor\Content\PrimitiveMeshDialog.xaml;;
+FE:\Github\Vega\VegaEditor\Editors\GeometryEditor\GeometryView.xaml;;
 

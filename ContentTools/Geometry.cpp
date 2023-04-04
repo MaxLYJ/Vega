@@ -1,4 +1,5 @@
 #include "Geometry.h"
+#include <iostream>
 
 namespace vega::tools {
     namespace {
@@ -9,7 +10,8 @@ namespace vega::tools {
         void recalculate_normals(mesh& m)
         {
             const u32 num_indices{ (u32)m.raw_indices.size() };
-            m.normals.reserve(num_indices);
+            m.normals.resize(num_indices);
+            std::cout << (m.normals.size() == 6) << std::endl;
 
             for (u32 i{ 0 }; i < num_indices; ++i)
             {
@@ -105,7 +107,7 @@ namespace vega::tools {
             for (u32 i{ 0 }; i < num_indices; ++i)
                 idx_ref[m.raw_indices[i]].emplace_back(i);
 
-            for (u32 i{ 0 }; i < num_indices; ++i)
+            for (u32 i{ 0 }; i < num_vertices; ++i)
             {
                 auto& refs{ idx_ref[i] };
                 u32 num_refs{ (u32)refs.size() };
@@ -146,7 +148,8 @@ namespace vega::tools {
                 const u16 normal_y{ (u16)pack_float<16>(v.normal.y, -1.f, 1.f) };
                 // TODO: pack tangents in sign and in x/y components
 
-                m.packed_vertices_static.emplace_back(packed_vertex::vertex_static
+                m.packed_vertices_static.
+                    emplace_back(packed_vertex::vertex_static
                     {
                         v.position, {0,0,0}, signs,
                         {normal_x, normal_y}, {},
@@ -287,12 +290,12 @@ namespace vega::tools {
     void pack_data(const scene& scene, scene_data& data)
     {
         constexpr u64 su32{ sizeof(u32) };
-        const u64 scene_size(get_scene_size(scene));
+        const u64 scene_size{ get_scene_size(scene) };
         data.buffer_size = (u32)scene_size;
         data.buffer = (u8*)CoTaskMemAlloc(scene_size);
         assert(data.buffer);
 
-        u8* const buffer(data.buffer);
+        u8* const buffer{data.buffer};
         u64 at{ 0 };
         u32 s{ 0 };
 
@@ -309,7 +312,7 @@ namespace vega::tools {
             // LOD name
             s = (u32)lod.name.size();
             memcpy(&buffer[at], &s, su32); at += su32;
-            memcpy(&buffer[at], lod.name.c_str(), s); at += su32;
+            memcpy(&buffer[at], lod.name.c_str(), s); at += s;
             // number of meshes in this LOD
             s = (u32)lod.meshes.size();
             memcpy(&buffer[at], &s, su32); at += su32;

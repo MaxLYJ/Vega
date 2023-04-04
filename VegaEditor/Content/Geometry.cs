@@ -157,26 +157,33 @@ namespace VegaEditor.Content
             reader.BaseStream.Position += s;
             // get number of LODs
             var numLODGroups = reader.ReadInt32();
-            string lodGroupName;
-            if(s > 0)
+            Debug.Assert(numLODGroups > 0);
+
+            for(int i=0; i<numLODGroups; ++i)
             {
-                var nameBytes = reader.ReadBytes(s);
-                lodGroupName = Encoding.UTF8.GetString(nameBytes);
+                // get LOD group's name
+                s = reader.ReadInt32();
+                string lodGroupName;
+                if (s > 0)
+                {
+                    var nameBytes = reader.ReadBytes(s);
+                    lodGroupName = Encoding.UTF8.GetString(nameBytes);
+                }
+                else
+                {
+                    lodGroupName = $"lod_{ContentHelper.GetRandomString()}";
+                }
+
+                // get number of meshes in this LOD group
+                var numMeshes = reader.ReadInt32();
+                Debug.Assert(numMeshes > 0);
+                List<MeshLOD> lods = ReadMeshLODs(numMeshes, reader);
+
+                var lodGroup = new LODGroup() { Name = lodGroupName };
+                lods.ForEach(l => lodGroup.LODs.Add(l));
+
+                _lodGroups.Add(lodGroup);
             }
-            else
-            {
-                lodGroupName = $"lod_{ContentHelper.GetRandomString()}";
-            }
-
-            // get number of meshes in this LOD group
-            var numMeshes = reader.ReadInt32();
-            Debug.Assert(numMeshes > 0);
-            List<MeshLOD> lods = ReadMeshLODs(numMeshes, reader);
-
-            var lodGroup = new LODGroup() { Name = lodGroupName };
-            lods.ForEach(l => lodGroup.LODs.Add(l));
-
-            _lodGroups.Add(lodGroup);
         }
 
         private static List<MeshLOD> ReadMeshLODs(int numMeshes, BinaryReader reader)
