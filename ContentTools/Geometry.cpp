@@ -136,11 +136,11 @@ namespace vega::tools {
 
         void pack_vertices_static(mesh& m)
         {
-            const u32 num_vertics{ (u32)m.vertices.size() };
-            assert(num_vertics);
-            m.packed_vertices_static.reserve(num_vertics);
+            const u32 num_vertices{ (u32)m.vertices.size() };
+            assert(num_vertices);
+            m.packed_vertices_static.reserve(num_vertices);
 
-            for (u32 i{ 0 }; i < num_vertics; ++i)
+            for (u32 i{ 0 }; i < num_vertices; ++i)
             {
                 vertex& v{ m.vertices[i] };
                 const u8 signs{ (u8)((v.normal.z > 0.f) << 1) };

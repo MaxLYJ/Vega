@@ -27,7 +27,7 @@ namespace VegaEditor.ContentToolsAPIStructs
     {
         public IntPtr Data;
         public int DataSize;
-        public GeometryImportSettings importSettings = new GeometryImportSettings();
+        public GeometryImportSettings ImportSettings = new GeometryImportSettings();
 
         public void Dispose()
         {
@@ -68,8 +68,6 @@ namespace VegaEditor.DllWrappers
             using var sceneData = new SceneData(); // here we used "using"
                                                    // so that sceneData will be gone when outside of the current scope and call
                                                    // disposable by destructor.
-                                                   // (But why normal var won't do that?
-                                                   // Seems to be still allocated on stack without "using" keyword)
             try
             {
                 CreatePrimitiveMesh(sceneData, info);

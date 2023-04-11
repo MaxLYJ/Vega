@@ -24,6 +24,10 @@
     <None Remove="ProjectTemplates\**" />
     <Page Remove="ProjectTemplates\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\PrimitiveMeshView\T_UVChecker_1K.png" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="EnvDTE" Version="17.4.33103.184" />
@@ -31,6 +35,10 @@
   
   <ItemGroup>
     <ProjectReference Include="..\EngineDLL\EngineDLL.vcxproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="Resources\PrimitiveMeshView\T_UVChecker_1K.png" />
   </ItemGroup>
 
 </Project>

@@ -8,15 +8,15 @@ cl : command line warning D9025: overriding '/sdl' with '/GS-'
 cl : command line warning D9025: overriding '/sdl' with '/GS-'
   ContentLoader.cpp
 cl : command line warning D9025: overriding '/sdl' with '/GS-'
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Engine.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Platform.cpp
-E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Entity.cpp)
-E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Platform\Platform.cpp)
 E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Content\ContentLoader.cpp)
-E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Transform.cpp)
-E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Script.cpp)
 E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Core\Engine.cpp)
+E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Entity.cpp)
+E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Transform.cpp)
 E:\Github\Vega\Engine\Components\Transform.cpp(35,27): warning C4100: 'componentHandle': unreferenced formal parameter
+E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Platform\Platform.cpp)
+E:\Github\Vega\Engine\Common\Id.h(32,17): warning C4189: 'index': local variable is initialized but not referenced (compiling source file Components\Script.cpp)
 E:\Github\Vega\Engine\Core\Engine.cpp(42,10): warning C4189: 'result': local variable is initialized but not referenced
   Engine.vcxproj -> E:\Github\Vega\x64\ReleaseEditor\Engine.lib

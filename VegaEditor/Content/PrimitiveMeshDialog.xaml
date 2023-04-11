@@ -34,6 +34,9 @@
                           ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
                           x:Name="primTypeComboBox"
                           SelectionChanged="OnPrimitiveType_ComboBox_SelectionChanged"/>
+                <CheckBox x:Name="textureCheckBox" Content="Show UV" VerticalAlignment="Center" Margin="5,0"
+                          IsChecked="True" Foreground="{StaticResource Editor.FontBrush.Normal}"
+                          Click="OnShowUV_CheckBox_Clicked"/>
             </StackPanel>
         </Border>
 
@@ -88,7 +91,7 @@
                             </DockPanel>
                         </StackPanel>
                     </Border>
-                    <Label Content="Segments" Background="{StaticResource Editor.Window.GrayBrush3}" VerticalAlignment="Top"
+                    <Label Content="Sizes" Background="{StaticResource Editor.Window.GrayBrush3}" VerticalAlignment="Top"
                            HorizontalContentAlignment="Left" Margin="20,-3,0,0" Padding="5,0" Foreground="{StaticResource Editor.FontBrush.Normal}"/>
                 </Grid>
             </StackPanel>

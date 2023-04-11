@@ -215,7 +215,7 @@ namespace VegaEditor.Content
             }
 
             var mesh = new Mesh();
-
+            
             var lodId = reader.ReadInt32();
             mesh.VertexSize = reader.ReadInt32();
             mesh.VertexCount = reader.ReadInt32();

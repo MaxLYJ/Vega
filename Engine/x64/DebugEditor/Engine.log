@@ -1,11 +1,11 @@
 ﻿cl : command line warning D9025: overriding '/sdl' with '/GS-'
 cl : command line warning D9025: overriding '/sdl' with '/GS-'
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Entity.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Script.cpp
 cl : command line warning D9025: overriding '/sdl' with '/GS-'
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Transform.cpp
+cl : command line warning D9025: overriding '/sdl' with '/GS-'
   ContentLoader.cpp
 cl : command line warning D9025: overriding '/sdl' with '/GS-'
   Engine.cpp

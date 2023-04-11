@@ -168,7 +168,7 @@ namespace VegaEditor.Editors
         {
             Debug.Assert(lod?.Meshes.Any() == true);
             // Calculate vertex size minus the position and normal vectors;
-            var offset = lod.Meshes[0].VertexSize = 3 * sizeof(float) - sizeof(int) - 2 * sizeof(short);
+            var offset = lod.Meshes[0].VertexSize - 3 * sizeof(float) - sizeof(int) - 2 * sizeof(short);
 
             // In order to set up camera position and target properly, we need to figure out how big
             // this object is that we're rendering. Hence, we need to know its bounding box.
@@ -183,7 +183,8 @@ namespace VegaEditor.Editors
                 var vertexData = new MeshRendererVertexData();
                 // Unpack all vertices
                 using (var reader = new BinaryReader(new MemoryStream(mesh.Vertices)))
-                    for(int i = 0; i < mesh.VertexCount; ++i)
+                {
+                    for (int i = 0; i < mesh.VertexCount; ++i)
                     {
                         // Read positions
                         var posX = reader.ReadSingle();
@@ -212,6 +213,7 @@ namespace VegaEditor.Editors
                         var v = reader.ReadSingle();
                         vertexData.UVs.Add(new Point(u, v));
                     }
+                }
 
                 using (var reader = new BinaryReader(new MemoryStream(mesh.Indices)))
                     if (mesh.IndexSize == sizeof(short))
