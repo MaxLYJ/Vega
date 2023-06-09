@@ -85,7 +85,7 @@ namespace VegaEditor.GameDev {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/VegaEditor;V1.0.0.0;component/gamedev/newscriptdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/VegaEditor;component/gamedev/newscriptdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\GameDev\NewScriptDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
