@@ -1,17 +1,1 @@
-﻿cl : command line warning D9025: overriding '/sdl' with '/GS-'
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  Entity.cpp
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  Script.cpp
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  Transform.cpp
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  ContentLoader.cpp
-  Engine.cpp
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  Main.cpp
-cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  Platform.cpp
-E:\Github\Vega\Engine\Core\Engine.cpp(42,10): warning C4189: 'result': local variable is initialized but not referenced
-  Engine.vcxproj -> E:\Github\Vega\x64\DebugEditor\Engine.lib
+﻿  Engine.vcxproj -> E:\C++GameEngineSeries\Vega\x64\DebugEditor\Engine.lib

@@ -1,8 +1,1 @@
-﻿  dllmain.cpp
-E:\Github\Vega\EngineDLL\dllmain.cpp(10,31): warning C4100: 'lpReserved': unreferenced formal parameter
-E:\Github\Vega\EngineDLL\dllmain.cpp(8,32): warning C4100: 'hModule': unreferenced formal parameter
-  EngineAPI.cpp
-  EntityAPI.cpp
-  Generating Code...
-     Creating library E:\Github\Vega\x64\DebugEditor\EngineDLL.lib and object E:\Github\Vega\x64\DebugEditor\EngineDLL.exp
-  EngineDLL.vcxproj -> E:\Github\Vega\x64\DebugEditor\EngineDLL.dll
+﻿  EngineDLL.vcxproj -> E:\C++GameEngineSeries\Vega\x64\DebugEditor\EngineDLL.dll
