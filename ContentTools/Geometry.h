@@ -53,7 +53,7 @@ namespace vega::tools {
     struct scene
     {
         std::string                         name;
-        utl::vector<lod_group>              lod_groups;
+        utl::vector<lod_group>              lod_groups;//So a scene has a name and an array of lod groups, where represent and object and all the level of details in that object.
     };
 
     struct geometry_import_settings

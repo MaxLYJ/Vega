@@ -244,15 +244,25 @@ namespace vega::tools {
 
     EDITOR_INTERFACE
     void CreatePrimitiveMesh(scene_data* data, primitive_init_info* info)
+        //The function takes two parameters: scene_data* data and primitive_init_info* info. Both are pointers to structures which presumably contain information about the 3D scene and initialization parameters for the primitive mesh, respectively.
     {
         assert(data && info);
+        //The two assert statements are checking for the validity of data and info (ensuring that they are not null pointers), and whether the type property of info is within a valid range of values (type should be less than primitive_mesh_type::count). Assert statements are typically used during development and testing phases to catch programming errors.
+        
         assert(info->type < primitive_mesh_type::count);
+        //It creates a local scene object and then uses an array or a map called creators (presumably a collection of function pointers or function objects), indexed by info->type, to invoke a specific function to create the primitive mesh in the scene.
         scene scene{};
         creators[info->type](scene, *info);
 
         // process scene and pack to be sent to the level editor
+       
         data->settings.calculate_normals = 1;
+        //It sets calculate_normals property of the settings object within data to 1. It suggests that the function will calculate the normals (which are used for lighting calculations in 3D graphics) of the created mesh.
+        
         process_scene(scene, data->settings);
+        //It then processes the scene by calling process_scene function with the created scene and the settings in data.
+        
         pack_data(scene, *data);
+        //Finally, it calls pack_data to presumably convert the processed scene data into a format that can be sent to the level editor.
     }
 }
