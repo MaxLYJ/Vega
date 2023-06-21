@@ -47,7 +47,7 @@ namespace vega::tools {
     struct lod_group
     {
         std::string                         name;
-        utl::vector<mesh>                   meshes;
+		utl::vector<mesh>                   meshes;//so this slot group contains a list of measures and these measures define what each level of detail of this object should look like.
     };
 
     struct scene

@@ -247,12 +247,15 @@ namespace vega::tools {
         //The function takes two parameters: scene_data* data and primitive_init_info* info. Both are pointers to structures which presumably contain information about the 3D scene and initialization parameters for the primitive mesh, respectively.
     {
         assert(data && info);
-        //The two assert statements are checking for the validity of data and info (ensuring that they are not null pointers), and whether the type property of info is within a valid range of values (type should be less than primitive_mesh_type::count). Assert statements are typically used during development and testing phases to catch programming errors.
+        //The two assert statements are checking for the validity of data and info (ensuring that they are not null pointers), 
         
         assert(info->type < primitive_mesh_type::count);
-        //It creates a local scene object and then uses an array or a map called creators (presumably a collection of function pointers or function objects), indexed by info->type, to invoke a specific function to create the primitive mesh in the scene.
+        //and whether the type property of info is within a valid range of values (type should be less than primitive_mesh_type::count). Assert statements are typically used during development and testing phases to catch programming errors.
+
         scene scene{};
         creators[info->type](scene, *info);
+        //It creates a local scene object and then uses an array or a map called creators (presumably a collection of function pointers or function objects), indexed by info->type, to invoke a specific function to create the primitive mesh in the scene.
+
 
         // process scene and pack to be sent to the level editor
        
